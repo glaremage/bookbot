@@ -1,4 +1,4 @@
-from stats import count_words, count_chars
+from stats import count_words, count_chars, sort
 
 def get_books(path):
     with open (path) as f:
@@ -8,5 +8,10 @@ def get_books(path):
 
 
 def main():
-    print(count_chars(get_books("./books/frankenstein.txt")))
+    print(f"Found {count_words(get_books("./books/frankenstein.txt"))} total words")
+    print("--------- Character Count -------")
+    for items in sort(count_chars(get_books("./books/frankenstein.txt"))):
+        if items["letter"].isalpha() == True:
+            print(f"{items["letter"]}: {items["num"]}")
+    print("============= END ===============")
 main()

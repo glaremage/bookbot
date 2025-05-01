@@ -1,7 +1,7 @@
 def count_words(book_text):
     split_text = book_text.split()
     words = len(split_text)
-    return (f"{words} words found in the document")
+    return (words)
 
 def count_chars(book_text):
     lowercase_book_test = book_text.lower()
@@ -14,9 +14,16 @@ def count_chars(book_text):
             letters[letter] +=1
     return letters
 
-    #take book text as input
-    #create dictionary with all letters set to 0
-    #iterate through the book text
-    #if letter is in dictionary, set value of it to +=1
-    #get count of every word
+def sort_on(dict):
+    return dict["num"]
+
+def sort(dict_letters):
+    unsorted_list = []
+    empty_dict = {}
+    for key in dict_letters:
+        keyval = dict_letters[key]
+        unsorted_list.append({"letter": key,"num": keyval})
+    
+    unsorted_list.sort(reverse=True, key=sort_on)
+    return unsorted_list
 
