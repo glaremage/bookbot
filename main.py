@@ -8,6 +8,9 @@ def get_books(path):
 
 
 def main():
+    print("============ BOOKBOT ============")
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
     print(f"Found {count_words(get_books("./books/frankenstein.txt"))} total words")
     print("--------- Character Count -------")
     for items in sort(count_chars(get_books("./books/frankenstein.txt"))):
